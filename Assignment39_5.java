@@ -4,13 +4,15 @@
  * 
  *      Input : iRow = 4    iCol = 4
  *      
- *      Output :    A   B   C   D 
- *                  A   B   C   D
- *                  A   B   C   D
- *                  A   B   C   D
- *                  
+ *      Output :    1   1   1   1
+ *                  2   2   2   2
+ *                  3   3   3   3
+ *                  4   4   4   4
+ *              
+ * 
  * 
  */
+
 
 
 /////////////////////////////////////////////////
@@ -24,7 +26,7 @@ import java.util.*;
 /////////////////////////////////////////////////
 
 
-class Assignment38_1
+class Assignment39_5
 {
     public static void main(String Args[])
     {
@@ -52,29 +54,27 @@ class Assignment38_1
 
 class Pattern
 {
-    public char Arr[][];
+    public int Arr[][];
 
     public Pattern(int i, int j)
     {
-        Arr = new char[i][j];
+        Arr = new int[i][j];
     }
+
     public void pattern()
     {
-        char ch = 'A';
+
         for(int i = 0; i < Arr.length; i++)
         {
-            ch = 'A';
             for(int j = 0; j < Arr[i].length; j++)
             {
-                Arr[i][j] = ch;
-                ch++;
+                    Arr[i][j] = i+1;
             }
         }
     }
 
     public void Display()
     {
-        System.out.println("Pattern will be : ");
         for(int i = 0; i < Arr.length; i++)
         {
             for(int j = 0; j < Arr[i].length; j++)
@@ -84,4 +84,7 @@ class Pattern
             System.out.println();
         }
     }
+
+
+
 }

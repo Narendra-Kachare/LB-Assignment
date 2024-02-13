@@ -2,15 +2,15 @@
  *  write a java program which accept number of rows and number of columns from
  * user and display below pattern
  * 
- *      Input : iRow = 4    iCol = 4
+ *      Input : iRow = 4    iCol = 5
  *      
- *      Output :    A   B   C   D 
- *                  A   B   C   D
- *                  A   B   C   D
- *                  A   B   C   D
- *                  
+ *      Output :    4   4   4   4   4
+ *                  3   3   3   3   3   
+ *                  2   2   2   2   2   
+ *                  1   1   1   1   1
  * 
  */
+
 
 
 /////////////////////////////////////////////////
@@ -24,7 +24,7 @@ import java.util.*;
 /////////////////////////////////////////////////
 
 
-class Assignment38_1
+class Assignment38_4
 {
     public static void main(String Args[])
     {
@@ -52,22 +52,20 @@ class Assignment38_1
 
 class Pattern
 {
-    public char Arr[][];
+    public int Arr[][];
 
     public Pattern(int i, int j)
     {
-        Arr = new char[i][j];
+        Arr = new int[i][j];
     }
+
     public void pattern()
     {
-        char ch = 'A';
         for(int i = 0; i < Arr.length; i++)
         {
-            ch = 'A';
             for(int j = 0; j < Arr[i].length; j++)
             {
-                Arr[i][j] = ch;
-                ch++;
+                Arr[i][j] = Arr.length-i;
             }
         }
     }

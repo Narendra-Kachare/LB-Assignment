@@ -5,12 +5,13 @@
  *      Input : iRow = 4    iCol = 4
  *      
  *      Output :    A   B   C   D 
+ *                  a   b   c   d
  *                  A   B   C   D
- *                  A   B   C   D
- *                  A   B   C   D
+ *                  a   b   c   d
  *                  
  * 
  */
+
 
 
 /////////////////////////////////////////////////
@@ -24,7 +25,7 @@ import java.util.*;
 /////////////////////////////////////////////////
 
 
-class Assignment38_1
+class Assignment38_2
 {
     public static void main(String Args[])
     {
@@ -63,7 +64,14 @@ class Pattern
         char ch = 'A';
         for(int i = 0; i < Arr.length; i++)
         {
-            ch = 'A';
+            if(i % 2 == 0)
+            {
+                ch = 'A';
+            }
+            else
+            {
+                ch = 'a';
+            }
             for(int j = 0; j < Arr[i].length; j++)
             {
                 Arr[i][j] = ch;
