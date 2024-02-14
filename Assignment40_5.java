@@ -8,7 +8,7 @@ import java.util.*;
 // Entry point Class
 /////////////////////////////////////////////////
 
-class Assignment40_1
+class Assignment40_5
 {
     public static void main(String Args[])
     {
@@ -17,10 +17,10 @@ class Assignment40_1
         System.out.println("Enter a string");
         String name = sobj.nextLine();
 
-        Pattern obj1 = new Pattern(name.length()-1, name.length());
+        Pattern obj1 = new Pattern(name.length(), name.length());
 
         obj1.pattern(name);
-        obj1.Display();
+        // obj1.Display();
 
 
         sobj.close();
@@ -42,30 +42,40 @@ class Pattern
         Arr = new char[i][j];
     }
 
-   
-
     public void pattern(String str)
     {
-        for(int i = 0; i < Arr.length; i++)
+        
+
+        //  Normal \
+        for(int i = 0; i < Arr.length-1; i++)
         {
             for(int j = 0; j < Arr[i].length; j++)
             {
-                Arr[i][j] = str.charAt(j);
+                if(i >= j)
+                {
+                    Arr[i][j] = str.charAt(j);
+                    System.out.print(Arr[i][j]+"\t");
+                }
             }
             System.out.println();
         }
-    }
 
-
-    public void Display()
-    {
+        // Frontslash /
+        
+        StringBuffer str1 = new StringBuffer(str);
+        str1 = str1.reverse();
         for(int i = 0; i < Arr.length; i++)
         {
-            for(int j = 0; j < Arr[i].length; j++)
+            for(int j = Arr[i].length-1; j > -1; j--)
             {
-                System.out.print(Arr[i][j]+"\t");
+                if(i <= j)
+                {
+                    Arr[i][j] = str1.charAt(j);
+                    System.out.print(Arr[i][j]+"\t");
+                }
             }
             System.out.println();
         }
+
     }
 }

@@ -8,7 +8,7 @@ import java.util.*;
 // Entry point Class
 /////////////////////////////////////////////////
 
-class Assignment40_1
+class Assignment40_3
 {
     public static void main(String Args[])
     {
@@ -17,7 +17,7 @@ class Assignment40_1
         System.out.println("Enter a string");
         String name = sobj.nextLine();
 
-        Pattern obj1 = new Pattern(name.length()-1, name.length());
+        Pattern obj1 = new Pattern(name.length(), name.length());
 
         obj1.pattern(name);
         obj1.Display();
@@ -42,30 +42,35 @@ class Pattern
         Arr = new char[i][j];
     }
 
-   
-
     public void pattern(String str)
     {
         for(int i = 0; i < Arr.length; i++)
         {
             for(int j = 0; j < Arr[i].length; j++)
             {
-                Arr[i][j] = str.charAt(j);
+                if(i >= j)
+                {
+                    Arr[i][j] = str.charAt(j);
+                }
             }
-            System.out.println();
+            // System.out.println("\n\n");
         }
     }
 
 
     public void Display()
     {
+        System.out.println("Output pattern will be : ");
         for(int i = 0; i < Arr.length; i++)
         {
             for(int j = 0; j < Arr[i].length; j++)
             {
-                System.out.print(Arr[i][j]+"\t");
+                if(i >= j)
+                {
+                    System.out.print(Arr[i][j]+"\t");
+                }
             }
-            System.out.println();
+            System.out.println("\n\n");
         }
     }
 }
