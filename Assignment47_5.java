@@ -2,17 +2,27 @@
 /*
    Write a program which accept matrix and swap the contents of consecutive rows. 
 
-    Input :     Number = 2
+    Input :
 
-        8       9       4       5
+    3       2       5       9
+    
+    4       3       2       2
 
-        4      11       14       6
+    8       4       1       5
+    
+    3       9       7       5
 
-        6       6       6       7
+    Output : 
 
-        9       8       5       4
+    4       3       2       2
 
-    Output : 14
+    3       2       5       9
+
+    3       9       7       5
+
+    8       4       1       5
+
+
 
 */ 
 
