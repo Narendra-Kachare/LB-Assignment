@@ -1,6 +1,6 @@
 
 /*
-   Write a program which accept matrix and display transpose of the matrix.
+   Write a program which accept matrix and reverse the contents of each column.
 
 
     Input :
@@ -15,13 +15,14 @@
 
 
     Output : 
-            3       4       8       3
+            3       9       7       5
+            
+            8       4       1       9
+            
+            4       3       2       2
+            
+            3       2       5       9
 
-            2       3       4       9
-
-            5       2       1       7
-
-            9       2       5       5
 
 
 */ 
@@ -35,7 +36,7 @@ import java.util.*;
 // Entry point Class
 /////////////////////////////////////////////////
 
-class Assignment48_1
+class Assignment48_2
 {
     public static void main(String Args[])
     {
@@ -51,9 +52,10 @@ class Assignment48_1
         Matrix obj1 = new Matrix(iRow, iCol);
 
         iRet = obj1.Accept(iRow, iCol);
-        iRet = obj1.Transpose(iRet, iRow, iCol);
+        iRet = obj1.ReverseCol(iRet, iRow, iCol);
         obj1.Display(iRet);
 
+        sobj.close();
     }
 }
 
@@ -100,18 +102,18 @@ class Matrix
         }
     }
 
-    public int[][] Transpose(int Arr[][], int iRow, int iCol)
+    public int[][] ReverseCol(int Arr[][], int iRow, int iCol)
     {
-        int ArrT[][] = new int[iRow][iCol];
+        int ArrR[][] = new int[iRow][iCol];
 
         for(int i = 0; i < Arr.length; i++)
         {
             for(int j = 0; j < Arr[i].length; j++)
             {
-                ArrT[i][j] = Arr[j][i];
+                ArrR[j][i] = Arr[iRow-1-j][i];
             }
         }
-        return ArrT;
+        return ArrR;
 
     }
 }
