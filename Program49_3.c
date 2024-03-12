@@ -16,6 +16,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+
+
 /////////////////////////////////////////////////
 // Helper class
 /////////////////////////////////////////////////
@@ -38,21 +40,15 @@ int* Number(int iNo)
     
 }
 
+
+
 void Pattern(int *Arr)
 {
-    
-    for(int i = 0; i < sizeof(Arr); i++)
+    for(int i = (sizeof(Arr))-1; i > -1; i--)
     {
-        for(int j = Arr[i]; j > -1; j--)
+        for(int j = 0; j < Arr[i]; j++)
         {
-            if(j == Arr[i])
-            {
-                printf("%d\t",Arr[i]);
-            }
-            else
-            {
-                printf("#\t");
-            }
+            printf("%d\t",(j+1));
         }
         printf("\n\n");
     }
